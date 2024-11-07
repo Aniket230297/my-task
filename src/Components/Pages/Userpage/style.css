@@ -1,0 +1,16 @@
+.userContainer{
+    width:20vw;
+    height:30vh;
+    /* border:1px solid black; */
+    padding: 5rem;
+}
+
+.buttonContainer > button{
+    padding: 0.5rem;
+}
+
+.buttonContainer{
+    display: flex;
+    gap:1rem;
+    margin-top: 10rem;
+}

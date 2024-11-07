@@ -1,0 +1,22 @@
+.navbarContainer{
+    width:100vw;
+    background-color: aliceblue;
+    padding: 0.5rem;
+}
+
+.navbarContainer > ul {
+    display: flex;
+    gap:10rem;
+}
+
+ li{
+    list-style: none;
+    font-size: 1.5rem;
+}
+
+.navbarContainer ul li a{
+    text-decoration: none ;
+    color: inherit;
+}
+
+

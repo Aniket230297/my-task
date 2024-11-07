@@ -1,0 +1,32 @@
+.listContainer  {
+    display: flex;
+    gap:4rem;
+    border-bottom: 1px solid black;
+    margin-bottom: 1rem;
+    margin-top: 1rem;
+    /* width:80vw; */
+    margin-left: 5rem;
+    padding: 0.5rem;
+    /* justify-content: center; */
+    align-items: center;
+}
+
+.listContainer > li{
+    list-style: none;
+}
+.iddiv{
+    width:4vw;
+}
+.titlediv{
+    width:30vw;
+}
+
+.boolendiv{
+    width: 10vw;
+}
+.listContainer > button{
+  padding: 0.9rem;
+  background-color: red;
+  color: white;   
+  border: none;
+}
