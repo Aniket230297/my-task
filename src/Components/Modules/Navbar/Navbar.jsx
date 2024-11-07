@@ -17,7 +17,7 @@ const Navbar = ()=>{
         <div className="navbarContainer">
             <ul>
                 <li>Logo</li>
-                <li><Link to="/">Home</Link></li>
+                <li><Link to="/" >Home</Link></li>
                 <li><Link to="/taskpage">Tasks</Link></li>
                 <li><Link to="/userpage">User</Link></li>
             </ul>
@@ -30,5 +30,6 @@ const Navbar = ()=>{
         </>
     )
 }
+
 
 export default Navbar;

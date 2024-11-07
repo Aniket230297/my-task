@@ -5,7 +5,6 @@ import "./style.css";
 const Loginpage = ({ setIsLoggedIn , setUserCredentials}) => {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
-  const [error, setError] = useState("");
   const [validationError, setValidationError] = useState("");
   const navigate = useNavigate();
 
@@ -13,7 +12,6 @@ const Loginpage = ({ setIsLoggedIn , setUserCredentials}) => {
     e.preventDefault();
     
     // Reset error messages
-    setError("");
     setValidationError("");
 
     // Credentials validation
@@ -22,7 +20,7 @@ const Loginpage = ({ setIsLoggedIn , setUserCredentials}) => {
         setIsLoggedIn(true);
         navigate("/");
       } else {
-        setError("Invalid username or password");
+        setValidationError("Invalid username or password");
       }
 
     if (!username) {
@@ -51,6 +49,7 @@ const Loginpage = ({ setIsLoggedIn , setUserCredentials}) => {
     
   };
 
+
   return (
     <div className="login-container">
       <h2>Login</h2>
@@ -68,7 +67,6 @@ const Loginpage = ({ setIsLoggedIn , setUserCredentials}) => {
           onChange={(e) => setPassword(e.target.value)}
         />
         {validationError && <p className="error">{validationError}</p>}
-        {error && <p className="error">{error}</p>}
         <button type="submit">Login</button>
       </form>
     </div>

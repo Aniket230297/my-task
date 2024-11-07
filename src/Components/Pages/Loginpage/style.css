@@ -1,5 +1,9 @@
 
-
+body {
+    background-color: #e0f7fa; /* Choose your preferred color */
+    font-family: Arial, sans-serif;
+  }
+  
 .login-container{
     display: flex;
     flex-direction: column;
@@ -27,4 +31,6 @@ form > button{
 
 .error{
     color: red;
+    /* border:1px solid black; */
+    margin-top: -0.5rem;
 }

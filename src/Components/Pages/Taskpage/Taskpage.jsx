@@ -1,10 +1,12 @@
-import { useEffect, useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import axios from 'axios'
 import "./style.css";
 
 const Taskpage =()=>{
     const [data, setData]=useState([]);
     const [newTaskTitle, setNewTaskTitle] = useState("");
+    const taskIdCounter = useRef(201);
+    
 
     useEffect(()=>{
         axios.get("http://jsonplaceholder.typicode.com/todos")
@@ -19,16 +21,16 @@ const Taskpage =()=>{
 
     // Handle adding a new task
   const addTask = () => {
-    if (newTaskTitle.trim() === "") return; // Prevent adding empty tasks
+    if (newTaskTitle.trim() === "") return; 
 
     const newTask = {
-      id: data.length + 1, // Generate a new ID (in reality, this should come from the API if you were adding it to the backend)
+      id: taskIdCounter.current++, 
       title: newTaskTitle,
-      completed: false, // New task will be marked as not completed by default
+      completed: false, 
     };
 
-    setData([newTask, ...data]); // Add the new task to the beginning of the list
-    setNewTaskTitle(""); // Clear the input field after adding
+    setData([newTask, ...data]); 
+    setNewTaskTitle(""); 
   };
 
     return(
@@ -37,10 +39,11 @@ const Taskpage =()=>{
         <input
           type="text"
           value={newTaskTitle}
-          onChange={(e) => setNewTaskTitle(e.target.value)} // Update state as the user types
+          onChange={(e) => setNewTaskTitle(e.target.value)} 
           placeholder="Enter new task"
+          className='addInput'
         />
-        <button onClick={addTask}>Add Task</button>
+        <button onClick={addTask} className='addInputBtn'>Add Task</button>
       </div>
 
         {data.map((item)=>(
@@ -51,7 +54,7 @@ const Taskpage =()=>{
                         <button onClick={()=>{deleteTask(item.id)}}>Delete</button>
                 </div>
         ))}
-        <button>Add Task</button>
+        
         </>
     )
 }

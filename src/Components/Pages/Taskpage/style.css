@@ -30,3 +30,15 @@
   color: white;   
   border: none;
 }
+
+.addInput{
+        width:15rem;
+        height: 2rem;
+        margin-left: 5rem;
+        margin-top: 1rem;
+}
+
+.addInputBtn{
+    height: 2rem;
+    margin-left: 1rem;
+}
