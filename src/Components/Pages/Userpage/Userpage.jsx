@@ -26,8 +26,8 @@ const Userpage = ({ userCredentials , setIsLoggedIn}) => {
   return (
     <div className="userContainer">
       <div>
-        <p>Username: {userCredentials.username}</p>
-        <p>
+        <p className="user">Username: {userCredentials.username}</p>
+        <p className="user">
           Password:{" "}
           {isEditing ? (
             <input
